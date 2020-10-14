@@ -8,28 +8,52 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet var redView: UIView!
     @IBOutlet var yellowView: UIView!
     @IBOutlet var greenView: UIView!
     @IBOutlet var startButton: UIButton!
     
+    private let lightIsOn: CGFloat = 1.0
+    private let lightIsOff: CGFloat = 0.3
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        redView.layer.cornerRadius = 55
-        redView.alpha = 0.3
-        yellowView.layer.cornerRadius = 55
-        yellowView.alpha = 0.3
-        greenView.layer.cornerRadius = 55
-        greenView.alpha = 0.3
+        redView.alpha = lightIsOff
+        yellowView.alpha = lightIsOff
+        greenView.alpha = lightIsOff
+        
+        startButton.setTitle("START", for: .normal)
         startButton.layer.cornerRadius = 10
     }
     
-
-    @IBAction func pressedStartButton() {
-        if redView.alpha != 1 {
-            redView.alpha = 1
-            startButton.setTitle("NEXT", for: .normal)
-        } 
+    override func viewWillLayoutSubviews() {
+        redView.layer.cornerRadius = redView.frame.width / 2
+        yellowView.layer.cornerRadius = yellowView.frame.width / 2
+        greenView.layer.cornerRadius = greenView.frame.width / 2
     }
+    
+    @IBAction func pressedStartButton() {
+        if startButton.currentTitle == "START" {
+            startButton.setTitle("NEXT", for: .normal)
+        }
+        
+        let lightsIsOnExists = [
+            redView,
+            yellowView,
+            greenView
+        ].contains() {$0.alpha == lightIsOn}
+        
+        if !lightsIsOnExists {
+            redView.alpha = lightIsOn
+        } else if redView.alpha == lightIsOn {
+            redView.alpha = lightIsOff
+            yellowView.alpha = lightIsOn
+        } else if yellowView.alpha == lightIsOn {
+            yellowView.alpha = lightIsOff
+            greenView.alpha = lightIsOn
+        } else if redView.alpha == lightIsOn {
+            
+        }
+            }
 }
