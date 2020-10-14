@@ -52,8 +52,9 @@ class ViewController: UIViewController {
         } else if yellowView.alpha == lightIsOn {
             yellowView.alpha = lightIsOff
             greenView.alpha = lightIsOn
-        } else if redView.alpha == lightIsOn {
-            
+        } else if greenView.alpha == lightIsOn {
+            greenView.alpha = lightIsOff
+            redView.alpha = lightIsOn
         }
-            }
+    }
 }
