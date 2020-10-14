@@ -32,20 +32,35 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAb-SH-Pg0">
-                                <rect key="frame" x="93" y="675" width="229" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAb-SH-Pg0">
+                                <rect key="frame" x="194" y="1181" width="254" height="66"/>
                                 <color key="backgroundColor" red="1" green="0.94519203351768666" blue="0.25128777282653914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="254" id="aXD-PK-htN"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="45"/>
                                 <state key="normal" title="START">
                                     <color key="titleColor" systemColor="systemPinkColor"/>
                                     <color key="titleShadowColor" systemColor="systemGreenColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="pressedStartButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="nRw-ot-oFr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.24857756523355468" green="0.50515033038310331" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IAb-SH-Pg0" secondAttribute="bottom" constant="82" id="MnS-pv-Nzy"/>
+                            <constraint firstItem="IAb-SH-Pg0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aHh-NA-Rpa"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greenView" destination="8bt-3O-xNV" id="F2m-ia-QNg"/>
+                        <outlet property="redView" destination="7F9-7g-q3h" id="Unu-Wo-Adm"/>
+                        <outlet property="startButton" destination="IAb-SH-Pg0" id="Cc8-H1-ICf"/>
+                        <outlet property="yellowView" destination="8zd-7h-mh8" id="fp2-yX-8Jc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
